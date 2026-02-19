@@ -117,7 +117,7 @@ body {
 }
 
 .nav-links {
-    display: flex;
+    display: none;
     gap: var(--space-xl);
     list-style: none;
 }
@@ -731,6 +731,7 @@ section {
     text-decoration: none;
     font-weight: 600;
     transition: color var(--transition-fast);
+    word-break: break-all;
 }
 
 .contact-link:hover {
@@ -948,6 +949,12 @@ footer {
 }
 
 /* Responsive */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+    }
+}
+
 @media (max-width: 1024px) {
     .project-card {
         grid-template-columns: 1fr !important;
@@ -963,34 +970,6 @@ footer {
     .project-card:nth-child(even) .project-content,
     .project-card .project-content {
         order: 2 !important;
-    }
-
-    .nav-container .nav-toggle {
-        display: block;
-        z-index: 1001;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: var(--bg-primary);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: var(--space-xl);
-        transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    }
-
-    .nav-links.nav-active {
-        right: 0;
-    }
-
-    .nav-links a {
-        font-size: var(--text-2xl);
-        color: var(--text-primary);
     }
 }
 
@@ -1054,6 +1033,39 @@ footer {
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-xl);
+        transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        display: none;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: var(--text-2xl);
+        color: var(--text-primary);
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: var(--space-sm);
     }
 }
 
@@ -1163,21 +1175,6 @@ footer {
     position: relative;
     width: 24px;
     height: 24px;
-}
-
-@media (max-width: 768px) { 
-    .nav-toggle {
-        display: block; /* Display on tablet and smaller */
-    }
-
-    .nav-links {
-        display: none; /* Hide nav links by default */
-        /* ... other mobile styles ... */
-    }
-
-    .nav-links.nav-active {
-        display: flex; /* Show when active */
-    }
 }
 
 .hamburger {
