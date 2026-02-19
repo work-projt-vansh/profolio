@@ -16,6 +16,9 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
         </div>
     </nav>
 
@@ -271,6 +274,13 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
         });
     </script>
 </body>
