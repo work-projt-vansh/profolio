@@ -278,10 +278,20 @@
 
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const navLinkItems = document.querySelectorAll('.nav-links a');
 
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
             navToggle.classList.toggle('active');
+        });
+
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('nav-active')) {
+                    navLinks.classList.remove('nav-active');
+                    navToggle.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
