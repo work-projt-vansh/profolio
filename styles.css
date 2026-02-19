@@ -965,7 +965,7 @@ footer {
         order: 2 !important;
     }
 
-    .nav-toggle {
+    .nav-container .nav-toggle {
         display: block;
         z-index: 1001;
     }
