@@ -17,12 +17,12 @@
     </div>
     <div class="case-study-hero">
         <div class="container-narrow">
-            <span class="section-label">Mobile Web App</span>
+            <span id="status-toggle" class="section-label" style="cursor: pointer;">Status: In Progress (click to expand)</span>
             <h1>Campus Navigation App</h1>
             <p>An intuitive wayfinding solution helping students navigate large university campuses with offline support, indoor navigation, and accessibility features.</p>
         </div>
     </div>
-    <div class="case-study-content">
+    <div id="case-study-content" class="case-study-content" style="display: none;">
         <div class="container-narrow">
             <div class="case-study-section">
                 <p><strong>Role:</strong> UX Researcher, UI Designer<br>
@@ -81,5 +81,14 @@
             </div>
         </div>
     </footer>
+<script>
+    const toggle = document.getElementById('status-toggle');
+    const content = document.getElementById('case-study-content');
+    toggle.addEventListener('click', () => {
+        const isHidden = content.style.display === 'none';
+        content.style.display = isHidden ? 'block' : 'none';
+        toggle.textContent = isHidden ? 'Status: In Progress (click to collapse)' : 'Status: In Progress (click to expand)';
+    });
+</script>
 </body>
 </html>
