@@ -1,4 +1,3 @@
-
 /* Design System & Styles (Dark Theme) */
 * {
     margin: 0;
@@ -738,6 +737,76 @@ section {
 .contact-link:hover {
     color: var(--primary);
 }
+
+/* Ant Design Inspired Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    text-align: left;
+    margin-top: var(--space-2xl);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+    letter-spacing: -0.01em;
+}
+
+.form-input,
+.form-textarea {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+    width: 100%;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(138, 77, 255, 0.2);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-tertiary);
+}
+
+.form-textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-form .btn-primary {
+    align-self: flex-start; /* Align button to the left */
+}
+
+.social-links-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-top: var(--space-2xl);
+}
+
+.social-links {
+    justify-content: flex-start;
+}
+
 
 /* Footer */
 footer {
